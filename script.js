@@ -7,7 +7,7 @@ buttons.forEach(btn=>{
   btn.addEventListener("click", () => {
     stopAllSounds(); 
 
-    const soundName = document.querySelector("#id");
+    const soundId = btn.getAttribute("data-sound");
 	const audio = document.getElementById(soundId);
     audio.play();
   });
