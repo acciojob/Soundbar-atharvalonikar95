@@ -10,7 +10,7 @@ const sounds = {
   victory: new Audio("sounds/victory.mp3"),
   wrong: new Audio("sounds/wrong.mp3")
 };
-sounds.forEach(btn=>{
+buttons.forEach(btn=>{
   btn.addEventListener("click", () => {
     stopAllSounds(); 
 
