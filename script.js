@@ -2,26 +2,23 @@
 const buttons = document.querySelectorAll(".btn");
 const stopBtn = document.querySelector(".stop");
 
-const sounds = {
-  applause: new Audio("sounds/applause.mp3"),
-  boo: new Audio("sounds/boo.mp3"),
-  gasp: new Audio("sounds/gasp.mp3"),
-  tada: new Audio("sounds/tada.mp3"),
-  victory: new Audio("sounds/victory.mp3"),
-  wrong: new Audio("sounds/wrong.mp3")
-};
+
 buttons.forEach(btn=>{
   btn.addEventListener("click", () => {
     stopAllSounds(); 
 
-    const soundName = btn.textContent;
-    sounds[soundName].play();
+    const soundName = document.querySelector("#id");
+	const audio = document.getElementById(soundId);
+    audio.play();
   });
 })
 function stopAllSounds() {
-  Object.values(sounds).forEach(audio => {
+  const audios = document.querySelectorAll("audio");
+
+  audios.forEach(audio => {
     audio.pause();
     audio.currentTime = 0;
   });
 }
+
 stopBtn.addEventListener("click", stopAllSounds);
